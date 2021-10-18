@@ -10,11 +10,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   mode: 'development',
   entry: {
-    main: './app.js',
+    main: './src/app.js',
   },
   output: {
     path: path.resolve('./dist'),
     filename: '[name].js',
+  },
+  devServer: {
+    overlay: true,
+    stats: 'errors-only',
+    historyApiFallback: true,
   },
   module: {
     rules: [
