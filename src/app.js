@@ -36,3 +36,5 @@ if (module.hot) {
     formEl.innerHTML = form.render();
   });
 }
+
+console.log('app.js');
