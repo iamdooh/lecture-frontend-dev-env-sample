@@ -20,6 +20,24 @@ module.exports = {
     overlay: true,
     stats: 'errors-only',
     historyApiFallback: true,
+    before: (app) => {
+      app.get('/api/users', (req, res) => {
+        res.json([
+          {
+            id: 1,
+            name: 'Alice',
+          },
+          {
+            id: 2,
+            name: 'Bek',
+          },
+          {
+            id: 2,
+            name: 'Chris',
+          },
+        ]);
+      });
+    },
   },
   module: {
     rules: [
