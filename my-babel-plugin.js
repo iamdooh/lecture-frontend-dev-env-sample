@@ -1,14 +1,14 @@
 module.exports = function myBablePlug() {
   return {
     visitor: {
-      VariableDeclaration(path) {
-        console.log("VariableDeclaration() kind:", path.node.kind) // const
+      VariableDeclaration: function (path) {
+        console.log("VariableDeclaration() kind:", path.node.kind); // const
 
         // const => bar 변환
         if (path.node.kind === "const") {
-          path.node.kind = "var"
+          path.node.kind = "var";
         }
       },
     },
-  }
-}
+  };
+};
